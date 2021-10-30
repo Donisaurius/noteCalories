@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="recursos/bootstrap.css">
+  <link rel="stylesheet" href="recursos/style.css">
+  <link rel="stylesheet" href="recursos/icono.min.css">
+</head>
+<body class="vh-100 mw-100">
+  <header class="header p-2 d-flex flex-column justify-content-center align-items-center">
+    <h1 class="display-3 text-center">
+      Note-calories
+    </h1>
+    <meter class="w-75" max="100" min="0" high="90"></meter>
+  </header>
+  <main class="p-2">
+    <section class="food-container d-flex flex-column justify-content-start align-items-center p-3 rounded-top">
+      <div class="food-cards">
+        <article class="food-name p-2 my-1 w-100 border border-dark border-1 rounded">
+          <p class="m-0">Nombre del alimento</p>
+        </article>
+        <article class="food-weight p-2 my-1 w-100 border border-dark border-1 rounded">
+          <p class="m-0">Peso del alimento</p>
+        </article>
+        <article class="food-cals p-2 my-1 border w-100 border-dark border-1 rounded">
+          <p class="m-0">Calorias asignadas</p>
+        </article>
+        <article class="remove-food-btn">
+          <button class="btn btn-close btn-danger"></button>
+        </article>
+      </div>
+    </section>
+    <div class="food-container-delete d-flex flex-column justify-content-end align-items-center">
+      <article class="food-delete">
+        <button class="btn btn-danger px-5" id="foodDelete">Eliminar todos los alimentos</button>
+        <div class="food-delete-modal d-none">
+          <h4>¿Desea eliminar toda la lista de alimentos?</h4>
+          <button class="delete-modal-yes btn btn-success w-75">Sipo</button>
+          <button class="delete-modal-no btn btn-danger w-75">Nope</button>
+        </div>
+      </article>
+    </div>
+    <section class="food-add d-flex justify-content-center align-items-center rounded-bottom">
+      <form class="food-add-form">
+        <input class="rounded p-3 border h-75" type="text" name="foodName" id="foodName" placeholder="Agregar alimento" autofocus>
+        <input class="rounded p-3 border h-75 d-none" type="number" name="foodWeight" id="foodWeight" placeholder="Agregar peso">
+        <input class="rounded p-3 border h-75 d-none" type="number" name="foodCals" id="foodCals" placeholder="Agregar calorías">
+        <button class="btn-name btn btn-success h-50">Agregar</button>
+        <button class="btn-weight btn btn-success h-50 d-none">Agregar</button>
+        <button class="btn-cals btn btn-success h-50 d-none">Agregar</button>
+      </form>
+    </section>
+  </main>
+  <nav class="nav d-flex justify-content-center align-items-end">
+    <button class="menu-btn menuBtn btn btn-secondary my-1 p-0">
+      <svg class="menuBtn" style="margin: 0; padding: 0;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+      <line class="menuBtn" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="12" y1="21" x2="52" y2="21"/>
+      <line class="menuBtn" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="12" y1="33" x2="52" y2="33"/>
+      <line class="menuBtn" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="12" y1="45" x2="52" y2="45"/>
+      </svg></button>
+    <ul class="botonera-container m-0 p-3">
+      <li class="botonera-limite">
+        <button class="btn" id="caloriesLimit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          Límite de calorías díaria
+        </button>
+      </li>
+      <li class="botonera-config">
+        <button class="botonera-config btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <script src="recursos/js/index.js" type="module"></script>
+</body>
+</html>
