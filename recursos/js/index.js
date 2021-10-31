@@ -72,6 +72,8 @@ const addingWeight = () => {
   parraf.classList.add("m-0");
   parraf.innerText = $foodWeight.value;
 
+  if($foodWeight.value === "") return alert("Debes completar este campo")
+
   console.log(globalFoodName)
   console.log(appMark)
 
@@ -100,6 +102,8 @@ const addingCals = (e) => {
   cardfoodCals.classList.add(...$classesFoodCardsCals);
   parraf.classList.add("m-0");
   parraf.innerText = $foodCals.value;
+
+  if($foodCals.value === "") return alert("Debes completar este campo")
 
   localStorage.setItem(globalFoodName,`${globalFoodWeight} ${$foodCals.value} cals`);
 
@@ -152,7 +156,7 @@ const putMeter = (sum) => {
   
   let title = d.querySelector(".header > h1")
   if(percent >= 90){
-    title.innerHTML +=  `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#f3cb60" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">
+    title.innerHTML =  `Note-calories <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#f3cb60" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">
       <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
       <line x1="12" y1="9" x2="12" y2="13"/>
       <line x1="12" y1="17" x2="12.01" y2="17"/>

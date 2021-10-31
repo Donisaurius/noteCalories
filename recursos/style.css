@@ -16,6 +16,8 @@ body{
 }
 
 main{
+  display: grid;
+  grid-template-rows: 65% 15% 20%;
   height: 100%;
 }
 
@@ -30,17 +32,21 @@ main{
 
 .food-container{
   background: #425c69a9;
-  height: 70%;
+  height: 100%;
   overflow-y: scroll;
   width: 100%;
 }
 
 .food-container-delete{
-  height: 10%;
+  height: min-content;
+  align-self: center;
+  justify-self: center;
 }
 
 .food-add{
-  height: 20%;
+  height: max-content;
+  align-self: center;
+  justify-self: center;
 }
 
 .food-name{
@@ -118,7 +124,7 @@ main{
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-duration: .6s;
-  background: #0086a2;
+  background: #0087a2d2;
   border-radius: 6% 6% 0 0;
   display: grid;
   grid-template-columns: 80% 20%;
