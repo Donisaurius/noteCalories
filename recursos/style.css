@@ -1,4 +1,6 @@
 body{
+  background: #42474b;
+  color: #eee;
   display: grid;
   grid-template-rows: 10vh 80vh 10vh;
   overflow-y: hidden;
@@ -9,7 +11,25 @@ body{
   animation-direction: alternate;
 }
 
+.header{
+  height: 100%;
+}
+
+main{
+  height: 100%;
+}
+
+.nav{
+  height: 100%;
+}
+
+#foodDelete{
+  background: #890115;
+  color: #eee;
+}
+
 .food-container{
+  background: #425c69a9;
   height: 70%;
   overflow-y: scroll;
   width: 100%;
@@ -24,12 +44,18 @@ body{
 }
 
 .food-name{
-  background: rgb(0, 150, 112);
+  background: #0086a2;
   color: aliceblue;
   font-weight: bold;
 }
 
+.food-weight, .food-cals{
+  background: #c5c3c4;
+  color: #222;
+}
+
 .menu-btn{
+  background: #425c69;
   height: 3rem;
   width: 3rem;
   z-index: 999;
@@ -92,7 +118,7 @@ body{
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-duration: .6s;
-  background: rgb(6, 226, 255);
+  background: #0086a2;
   border-radius: 6% 6% 0 0;
   display: grid;
   grid-template-columns: 80% 20%;
@@ -101,12 +127,19 @@ body{
   list-style: none;
   position: absolute;
   bottom: 0;
-  transform: translateY(100%);
+  transform: translateY(110%);
+  width: 100%;
+}
+
+.botonera-limite{
+  height: 100%;
   width: 100%;
 }
 
 .botonera-limite button{
-  background-color: rgba(151, 151, 151, 0.603);
+  background-color:#425c69;
+  border-radius: 5px;
+  color: #eee;
   align-items: center;
   display: flex;
   justify-content: space-evenly;
@@ -124,15 +157,18 @@ body{
   justify-self: end;
   grid-row: 1/2;
   grid-column: 2/3;
+  height: 100%;
+  width: 2.5rem;
 }
 
 .botonera-config button{
-  background: rgba(151, 151, 151, 0.603);
+  background: #425c69;
+  color: #eee;
   border: none;
-  border-radius: 10%;
-  height: 2.6rem;
+  border-radius: 5px;
+  height: 100%;
   padding: 0;
-  width: 2.6rem;
+  width: 100%;
 }
 
 .botonera-config button svg{
@@ -170,7 +206,7 @@ body{
 }
 
 .yourName::placeholder{
-  color: #222;
+  color: rgb(58, 58, 58);
 }
 
 .fade-out{

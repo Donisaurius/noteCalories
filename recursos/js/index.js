@@ -342,9 +342,13 @@ const showMenu = () => {
   console.log($botonera.style.animationName) */
 
   if(!($botonera.style.animationName === "fromBottom")){
+    $botonera.style.display = "grid";
     $botonera.style.animationName = "fromBottom"
   }else{
-    $botonera.style.animationName = "toBottom"
+    $botonera.style.animationName = "toBottom";
+    setTimeout(() => {
+      $botonera.style.display = "none";
+    }, 600);
   }
   
 }
