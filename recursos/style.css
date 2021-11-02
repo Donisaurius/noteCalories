@@ -2,7 +2,7 @@ body{
   background: #42474b;
   color: #eee;
   display: grid;
-  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-rows: 10% 80% 10%;
   overflow-y: hidden;
   /* animation-name: warning; */
   animation-timing-function: linear;
@@ -64,6 +64,8 @@ main{
   background: #425c69;
   height: 3rem;
   width: 3rem;
+  position: fixed;
+  bottom: 0;
   z-index: 999;
   animation-duration: 2s;
   animation-timing-function: linear;
@@ -126,7 +128,7 @@ main{
   animation-duration: .6s;
   background: #0087a2d2;
   border-radius: 6% 6% 0 0;
-  display: grid;
+  display: none;
   grid-template-columns: 80% 20%;
   grid-template-rows: repeat(auto-fit,20%);
   height: 30vh;
