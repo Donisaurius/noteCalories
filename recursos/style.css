@@ -74,6 +74,7 @@ main{
   animation-timing-function: linear;
   animation-iteration-count: 3;
   animation-fill-mode: forwards;
+  transition: all .5s ease-out;
 }
 
 .menu-btn svg{
@@ -138,7 +139,7 @@ main{
   list-style: none;
   position: absolute;
   bottom: 0;
-  transform: translateY(100%);
+  /* transform: translateY(100%); */
   width: 100%;
 }
 
