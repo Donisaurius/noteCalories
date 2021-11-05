@@ -611,3 +611,15 @@ d.addEventListener("DOMContentLoaded", () => {
   loadFood();
   gettingCals();
 })
+
+d.addEventListener("focusin",e => {
+  if(e.target.matches("input[type='text']") || e.target.matches("input[type='number']")){
+    d.querySelector(".menu-btn").classList.add("fade-out");
+  }
+})
+
+d.addEventListener("focusout",e => {
+  if(e.target.matches("input[type='text']") || e.target.matches("input[type='number']")){
+    d.querySelector(".menu-btn").classList.remove("fade-out");
+  }
+})
