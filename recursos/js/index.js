@@ -490,7 +490,12 @@ const insertLimit = (e) => {
   insertBtn = d.createElement("button"),
   p = d.createElement("p"),
   $btn = d.getElementById("caloriesLimit"),
-  container = d.createElement("div");
+  container = d.createElement("div"),
+  exit = d.createElement("button");
+
+  exit.classList.add(...["btn","btn-danger"]);
+  exit.style.fontSize = "1rem";
+  exit.textContent = "X";
 
   container.id = "containerCalsLimit"
   container.style.width = "100%";
@@ -510,8 +515,9 @@ const insertLimit = (e) => {
   messageContainer.classList.add(...["botonera-modal","p-2"]);
   messageContainer.insertAdjacentElement("afterbegin",limit)
   messageContainer.insertAdjacentElement("afterbegin",p)
+  messageContainer.insertAdjacentElement("afterbegin",exit)
   messageContainer.insertAdjacentElement("beforeend",insertBtn);
-  container.insertAdjacentElement("afterbegin",messageContainer)
+  container.insertAdjacentElement("beforeend",messageContainer);
   limit.type = "number";
   limit.classList.add("limitCalories");
   document.body.insertAdjacentElement("afterbegin",container);
@@ -519,6 +525,11 @@ const insertLimit = (e) => {
   d.addEventListener("click",(e) => {
 
     if(e.target === insertBtn){
+
+      if(limit.value == ""){
+        return alert("Este campo necesita ser llenado.")
+      }
+
       limit = limit.value.toString();
       document.body.removeChild(container);
       alert("REGISTRO DE CALORIAS EXITOSO");
@@ -529,9 +540,9 @@ const insertLimit = (e) => {
       location.reload();
     }
     
-    if(e.target.matches("#containerCalsLimit")){
+    if(e.target === exit){
       console.log(e)
-      d.body.removeChild(e.target)
+      d.body.removeChild(container)
       $btn.style.pointerEvents = "all";
       $btn.disabled = false;
     }
